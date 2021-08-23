@@ -5,6 +5,8 @@ import 'package:roomers/components/mainButton.dart';
 import 'package:roomers/components/social_icon.dart';
 import 'package:roomers/screens/Forgot_password/forgot_password_screen.dart';
 import 'package:roomers/screens/Sign_up/signup_screen.dart';
+import 'package:roomers/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
+import 'package:roomers/screens/home/home_screen.dart';
 import 'package:roomers/screens/welcome_page/welcome_screen.dart';
 
 class Body extends StatelessWidget {
@@ -79,8 +81,10 @@ class Body extends StatelessWidget {
                       height: 15.0,
                     ),
                     ElevatedButton(
-                      onPressed: () =>
-                          Navigator.pushNamed(context, WelcomeScreen.idScreen),
+                      // onPressed: () => Navigator.pushReplacementNamed(
+                      //     context, HomeScreen.idScreen),
+                      onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                          context, BottomNavBar.idScreen, (route) => false),
                       child: Text(
                         "Login",
                         style: TextStyle(fontSize: 15.0),
